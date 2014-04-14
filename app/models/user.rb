@@ -4,4 +4,6 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :email
   has_many :questions
 
+  has_and_belongs_to_many :answers
+
 end

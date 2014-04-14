@@ -9,7 +9,7 @@
 <body>
   <div class="container">
     <%= bootstrap_flash %>
-
+   <%= link_to "Home", root_url %> |
   <% if current_user %>
   Logged in as <%= current_user.email %>.
   <%= link_to "Log Out", logout_path %>

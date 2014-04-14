@@ -1,0 +1,14 @@
+<h1><%= @question.title %></h1>
+
+<h2><%= @question.question %></h2>
+
+<h2>Posted by: <%= @user.email %></h2>
+<h4>Answers:</h4>
+<% @question.answers.each do |a| %>
+<li><%= a.answer %></li>
+<% end %>
+
+
+
+
+<%= link_to "New Answer", new_answer_path(question_id: @question.id), id: "new_answer", remote: true %>

@@ -1,0 +1,7 @@
+<%= form_for @answer do |f| %>
+  <%= f.label :answer %> <br>
+  <%= f.text_area :answer %><br>
+  <%= f.hidden_field :user_id, :value => session[:user_id] %><br>
+  <%= f.hidden_field :question_id, :value => @question.id %>
+  <%= f.submit(:class => 'btn btn-success') %>
+<% end %>

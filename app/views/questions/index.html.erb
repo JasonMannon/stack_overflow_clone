@@ -1,7 +1,7 @@
 <h1>ALL YR QUESTIONS</h1>
 
 <% @questions.each do |q| %>
-<li><%= link_to q.question  %></li>
+<li><%= link_to q.question, question_path(q) %></li>
 <% end %>
 
 

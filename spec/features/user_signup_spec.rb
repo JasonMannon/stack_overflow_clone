@@ -7,5 +7,6 @@ feature 'user sign up' do
     fill_in "Password", with: "1"
     fill_in "Password confirmation", with: "1"
     click_button "Create User"
+    page.should have_content "tnx 4 signing up!!"
   end
 end

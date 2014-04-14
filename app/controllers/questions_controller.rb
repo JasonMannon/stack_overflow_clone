@@ -6,11 +6,15 @@ class QuestionsController < ApplicationController
   end
 
   def show
-    @question = Question.find_by_title(params[:title])
+    @question = Question.find(params[:id])
+    @user = User.find(@question.user_id)
+    @answer = Answer.new
+    @answers = Answer.all
   end
 
   def new
     @question = Question.new
+    @answer = Answer.new
   end
 
   def create
