@@ -1,0 +1,12 @@
+<h1>ALL YR QUESTIONS</h1>
+
+<% @questions.each do |q| %>
+<li><%= link_to q.question  %></li>
+<% end %>
+
+
+<% if current_user %>
+<%= render 'form' %>
+<% else %>
+ <h3>Please Log In to create a question</h3>
+<% end %>
