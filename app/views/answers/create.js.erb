@@ -1,3 +1,4 @@
+
 $('#new_answer').remove();
-$('#new_answer').show();
-%('#answers').append('<%= render(@answer) %>');
+$('#new_answer_link').show();
+$('.answers ul').append('<li><%= @answer.answer %></li>');

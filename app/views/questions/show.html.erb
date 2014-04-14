@@ -3,12 +3,18 @@
 <h2><%= @question.question %></h2>
 
 <h2>Posted by: <%= @user.email %></h2>
+
 <h4>Answers:</h4>
-<% @question.answers.each do |a| %>
-<li><%= a.answer %></li>
-<% end %>
+<div class="answers">
+  <ul>
+    <% @question.answers.each do |answer| %>
+      <li><%= answer.answer %></li>
+    <% end %>
+  </ul>
+</div>
 
 
 
 
-<%= link_to "New Answer", new_answer_path(question_id: @question.id), id: "new_answer", remote: true %>
+
+<%= link_to "New Answer", new_answer_path(question_id: @question.id), id: "new_answer_link", remote: true %>

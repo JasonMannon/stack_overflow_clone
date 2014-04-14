@@ -15,15 +15,11 @@ class AnswersController < ApplicationController
 
   def create
     @answer = Answer.new(answer_params)
-    respond_to do |format|
-      format.html { render "question#show" }
-      format.js
-    end
-
     if @answer.save
-      redirect_to root_url, notice:"Answer added."
-    else
-      render "new"
+      respond_to do |format|
+        format.html { redirect_to question_path(@answer.question_id) }
+        format.js
+      end
     end
   end
 
