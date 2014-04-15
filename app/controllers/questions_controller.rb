@@ -9,7 +9,7 @@ class QuestionsController < ApplicationController
     @question = Question.find(params[:id])
     @user = User.find(@question.user_id)
     @answer = Answer.new
-    @answers = Answer.all
+    @answers = Answer.all.order(top_vote: :desc)
   end
 
   def new

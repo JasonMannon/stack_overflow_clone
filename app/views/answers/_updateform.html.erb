@@ -1,0 +1,9 @@
+
+<div id="top_answer">
+<%= form_for @answer do |f| %>
+
+
+  <%= f.hidden_field :top_answer, :value => true %>
+  <%= f.submit(:class => 'btn btn-success') %>
+<% end %>
+</div>
